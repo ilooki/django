@@ -1,0 +1,35 @@
+Looking in indexes: http://pypi.douban.com/simple
+Collecting mysqlclient
+  Downloading http://pypi.doubanio.com/packages/d0/97/7326248ac8d5049968bf4ec708a5d3d4806e412a42e74160d7f266a3e03a/mysqlclient-1.4.6.tar.gz (85kB)
+Installing collected packages: mysqlclient
+  Running setup.py install for mysqlclient: started
+    Running setup.py install for mysqlclient: finished with status 'error'
+    Complete output from command D:\2020python\project\venv\Scripts\python.exe -u -c "import setuptools, tokenize;__file__='C:\\MATLAB7\\bin\\win32\\Temp\\pip-install-98pon2tc\\mysqlclient\\setup.py';f=getattr(tokenize, 'open', open)(__file__);code=f.read().replace('\r\n', '\n');f.close();exec(compile(code, __file__, 'exec'))" install --record C:\MATLAB7\bin\win32\Temp\pip-record-f17twq4x\install-record.txt --single-version-externally-managed --compile --install-headers D:\2020python\project\venv\include\site\python3.8\mysqlclient:
+    C:\Users\AMY\AppData\Local\Programs\Python\Python38\lib\distutils\dist.py:274: UserWarning: Unknown distribution option: 'long_description_content_type'
+      warnings.warn(msg)
+    running install
+    running build
+    running build_py
+    creating build
+    creating build\lib.win-amd64-3.8
+    creating build\lib.win-amd64-3.8\MySQLdb
+    copying MySQLdb\__init__.py -> build\lib.win-amd64-3.8\MySQLdb
+    copying MySQLdb\_exceptions.py -> build\lib.win-amd64-3.8\MySQLdb
+    copying MySQLdb\compat.py -> build\lib.win-amd64-3.8\MySQLdb
+    copying MySQLdb\connections.py -> build\lib.win-amd64-3.8\MySQLdb
+    copying MySQLdb\converters.py -> build\lib.win-amd64-3.8\MySQLdb
+    copying MySQLdb\cursors.py -> build\lib.win-amd64-3.8\MySQLdb
+    copying MySQLdb\release.py -> build\lib.win-amd64-3.8\MySQLdb
+    copying MySQLdb\times.py -> build\lib.win-amd64-3.8\MySQLdb
+    creating build\lib.win-amd64-3.8\MySQLdb\constants
+    copying MySQLdb\constants\__init__.py -> build\lib.win-amd64-3.8\MySQLdb\constants
+    copying MySQLdb\constants\CLIENT.py -> build\lib.win-amd64-3.8\MySQLdb\constants
+    copying MySQLdb\constants\CR.py -> build\lib.win-amd64-3.8\MySQLdb\constants
+    copying MySQLdb\constants\ER.py -> build\lib.win-amd64-3.8\MySQLdb\constants
+    copying MySQLdb\constants\FIELD_TYPE.py -> build\lib.win-amd64-3.8\MySQLdb\constants
+    copying MySQLdb\constants\FLAG.py -> build\lib.win-amd64-3.8\MySQLdb\constants
+    running build_ext
+    building 'MySQLdb._mysql' extension
+    error: Microsoft Visual C++ 14.0 is required. Get it with "Microsoft Visual C++ Build Tools": http://landinghub.visualstudio.com/visual-cpp-build-tools
+    
+    ----------------------------------------

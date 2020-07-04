@@ -1,0 +1,33 @@
+ body{
+       background: blue;
+}
+
+.footer-container{
+     background: deepskyblue;
+      width: 100%;
+      clear: both;
+    position: relative;
+ 	z-index: 10;
+ }
+ .span6{
+    width: 100%;
+    margin: 10px auto;
+}
+.span6 a{
+    padding-left: 15px;
+    color: midnightblue;
+    text-decoration: none;
+}
+.span6 a:hover{
+    color: black;
+    font-size: 1.1em;
+}
+
+.left{
+    position: absolute;
+    top: 5px;
+}
+#toTop{
+    position: fixed;
+    bottom: 100px;
+}

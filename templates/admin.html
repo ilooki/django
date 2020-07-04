@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>个人论坛</title>
+
+    <!-- 样式-->
+    <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/statics/css/style.css">
+
+    <!--[if lt IE 9]>
+    <link rel="stylesheet" href="css/style-ie.css"/>
+    <![endif]-->
+
+    <!-- js -->
+    <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+    <script src="/statics/js/bootstrap.js"></script>
+    <script src="/statics/js/jquery.prettyPhoto.js"></script>
+    <script src="/statics/js/jquery.flexslider.js"></script>
+    <script src="/statics/js/jquery.custom.js"></script>
+    <script src="/statics/js/star.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("#btn-blog-next").click(function () {
+                $('#blogCarousel').carousel('next')
+            });
+            $("#btn-blog-prev").click(function () {
+                $('#blogCarousel').carousel('prev')
+            });
+
+            $("#btn-client-next").click(function () {
+                $('#clientCarousel').carousel('next')
+            });
+            $("#btn-client-prev").click(function () {
+                $('#clientCarousel').carousel('prev')
+            });
+
+        });
+
+        $(window).load(function () {
+
+            $('.flexslider').flexslider({
+                animation: "slide",
+                slideshow: true,
+                start: function (slider) {
+                    $('body').removeClass('loading');
+                }
+            });
+        });
+
+    </script>
+</head>
+
+<body class="home" style="overflow:hidden;">
+<!-- Color Bars (above header)-->
+<span class="star"></span>
+<div class="container">
+    <div class="header-container">
+        <div class="span4">
+            <div class="input-prepend" >
+                <span class="add-on">管理员账号：</span>
+                <input style="width: 150px" class="span2" id="uid"size="30" type="text" placeholder="账号">
+            </div>
+            <div class="input-prepend">
+                <span class="add-on">管理员密码：</span>
+                <input style="width: 150px" class="span2" id="pwd"
+                                                      size="30" type="password"
+                                                      placeholder="密码">
+            </div>
+            <div >
+                <button id="login-button" style="margin-right: 20px;margin-left: 100px;padding:2px 5px;" class="btn-large" type="submit">登录
+                </button>
+                <button id="register-button" style="margin-right: 20px;margin-left: 20px;padding:2px 5px;" class="btn-large"
+                        type="submit">取消
+                </button>
+            </div>
+
+        </div>
+        <a href="/login" class="admin" >普通用户登录></a>
+    </div>
+
+</div>
+
+
+<!-- 结尾部分 -->
+<div class="footer-container" style="position: relative ;top: 100px;height:300px;background: deepskyblue;">
+     <div >
+
+                    <span class="left">个人论坛 </span>
+
+                <div class="span6">
+                    <span class="right">
+                        <a href="#">主页</a>
+                        <a href="#">主页</a>
+                        <a href="#">主页</a>
+                        <a href="#">主页</a>
+                        <a href="#">主页</a>
+                        <a href="#">主页</a>
+                    </span>
+                </div>
+            </div>
+</div>
+<!-- 尾部结束 -->
+
+<!-- 回到顶端 -->
+<div id="toTop" class="hidden-phone hidden-tablet">回到顶端</div>
+
+<script>
+    $('#login-button').click(function () {
+       var uid = $('#uid').val();
+       var pwd = $('#pwd').val();
+       $.ajax({
+            url: window.location.href,
+            type: "POST",
+            data: {'admin_id': uid, 'admin_pwd': pwd},
+            beforeSend: function (xhr, settings) {
+                xhr.setRequestHeader("X-CSRFToken", "{{ csrf_token }}");    // csrf
+            },
+            success: function (data) {
+                // data是服务器端返回的字符串
+                var dic = JSON.parse(data)
+                if (!dic.status) alert(JSON.parse(data).msg);
+                else window.location.href="/admin_home";
+            }
+        });
+    });
+
+    $('#register-button').click(function () {
+       window.location.href = "/home";
+    });
+
+</script>
+</body>
+</html>
